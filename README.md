@@ -1,17 +1,11 @@
 CSE-316-Project Question Assigned
+
 You are a computer systems engineer working at a large technology company. Your manager has tasked you with creating a simulation program to test the performance of the Round Robin scheduling algorithm. The simulation program should generate a set of processes with random arrival times and CPU burst times, and should run the Round Robin algorithm for a set amount of time (e.g. 100 time units). The program should record the average waiting time and turnaround time for each process, and should compare the results with the ideal scenario of a perfect scheduler.
+
 Solution Format Round Robin Scheduling algorithm in C Programming language
-Sample Input:
-PID     Arrival Time    Burst Time      Waiting Time    Turnaround Time
-1       15              7               30              37
-2       14              7               32              39
-3       2               10              55              65
-4       8               10              50              60
-5       11              9               42              51
-6       13              1               2               3
-7       8               4               32              36
-8       15              7               41              48
-9       10              10              49              59
-10      12              4               35              39
-Average Waiting Time = 36.80
-Average Turnaround Time = 43.70
+
+This code implements the Round Robin scheduling algorithm in C. It first generates a set of random processes with random arrival and burst times using the generate_processes() function. Then, it runs the Round Robin algorithm using the run_round_robin() function with a fixed quantum of 3 units. Finally, it prints the results of the algorithm, including the waiting time and turnaround time for each process, as well as the average waiting and turnaround times.
+
+The Process struct represents a process with its ID, arrival time, burst time, remaining time, waiting time, and turnaround time. The generate_processes() function initializes these values for each process based on random values within predefined maximum values. The run_round_robin() function implements the Round Robin algorithm by iterating over the processes until all have completed their execution. Each process is given a quantum of CPU time to execute, and if it has not finished, it is added back to the end of the queue for the next round. Once a process completes, its waiting time and turnaround time are calculated. Finally, the print_results() function displays the results of the algorithm, including the waiting time and turnaround time for each process, as well as the average waiting and turnaround times for all processes.
+
+Overall, this code provides a basic implementation of the Round Robin scheduling algorithm and can be used as a starting point for more complex scheduling algorithms or for educational purposes. However, it has some limitations, such as the fixed quantum and the assumption of no preemption, which may not be suitable for all scenarios.
